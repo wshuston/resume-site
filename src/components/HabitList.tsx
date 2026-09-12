@@ -28,13 +28,13 @@ function HabitItem({ habit }: HabitItemProps) {
         end: endOfWeek(new Date(), {weekStartsOn: 1}),
     })
 
-    return <div className="rounded-xl bg-zinc-800 p-4">
+    return <div className="rounded-xl bg-zinc-800 p-4 flex flex-col gap-3">
         <div className="flex items-center justify-between mb-3">
             <div className="flex gap-3 items-center">
                 <span className="font-medium">{habit.name}</span>
                 <span className="text-sm text-amber-400">🔥 3</span>
             </div>
-            <Button variant="ghost-destructive">Delete</Button>
+            <Button variant="ghost-destructive" className="text-sm">Delete</Button>
         </div>
         <div className="flex gap-1.5">
             {visibleDates.map(date => (
