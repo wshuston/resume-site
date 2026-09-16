@@ -24,6 +24,7 @@ export default function App() {
                 const completions = alreadyDone
                     ? h.completions.filter(c => !isSameDay(c, date))
                     : [...h.completions, date]
+                return {...h, completions}
             })
         ))
     }
@@ -32,7 +33,10 @@ export default function App() {
         <div className="max-w-2xl mx-auto p-4 flex flex-col gap-4">
             <Header />
             <HabitForm addHabit={addHabit} />
-            <HabitList deleteHabit={deleteHabit} habits={habits} />
+            <HabitList
+                deleteHabit={deleteHabit}
+                toggleHabit={toggleHabit}
+                habits={habits} />
         </div>
     )
 }
