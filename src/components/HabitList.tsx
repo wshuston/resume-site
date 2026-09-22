@@ -1,6 +1,6 @@
 import {Button} from "./button";
 import {eachDayOfInterval, endOfWeek, format, isFuture, isSameDay, startOfWeek, subDays} from "date-fns";
-import {Habit, useHabits} from "../context/HabitProvider";
+import {useHabits, type Habit} from "../context/useHabits";
 
 export function HabitList() {
     const {habits} = useHabits()

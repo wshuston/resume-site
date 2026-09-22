@@ -1,6 +1,6 @@
 import {Button} from "./button";
 import {useState, type SubmitEvent} from "react";
-import {useHabits} from "../context/HabitProvider";
+import {useHabits} from "../context/useHabits";
 
 type HabitFormProps = {
     addHabit: (name: string) => void;
