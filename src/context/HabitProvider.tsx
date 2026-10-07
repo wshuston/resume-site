@@ -1,16 +1,15 @@
-import {useState} from "react";
-import {Header} from "../components/Header";
-import {HabitForm} from "../components/HabitForm";
-import {HabitList} from "../components/HabitList";
+import { type ReactNode } from "react";
 import {isSameDay} from "date-fns";
 import {HabitContext, type Habit} from "./useHabits";
+import { useLocalStorage } from "../hooks/useLocalStorage";
+
 
 type HabitProviderProps = {
     children: ReactNode,
 }
 
 export function HabitProvider({ children }: HabitProviderProps) {
-    const [habits, setHabits] = useState<Habit[]>([])
+    const [habits, setHabits] = useLocalStorage<Habit[]>("Habits",[])
 
     function addHabit(name: string) {
         setHabits(curr => [...curr, {id: crypto.randomUUID(), name, completions: []},])
